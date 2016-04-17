@@ -1,0 +1,575 @@
+<script name="setup_script" version="1" id="{42676302-2d39-48c1-a330-262f47e6a728}">
+	<libraries>
+		<library name="Std" file="GlobexyVPL"/>
+		<library name="Renderer" file="ScriptEditorLibrary"/>
+	</libraries>
+	<logics>
+		<logic name="Main" kind="">
+			<variables>
+				<variable name="Index" type_id="1002"/>
+				<variable name="Offset" type_id="1002"/>
+				<variable name="Offset2" type_id="1002"/>
+				<variable name="Select_Polygon" type_id="1100"/>
+				<variable name="Bezier" type_id="1005"/>
+			</variables>
+			<nodes>
+				<node type="Action" instance="entry" pos_x="-1680" pos_y="-304" index="0">
+					<events>
+						<event name="out">
+							<action node="57">in</action>
+							<action node="77">in</action>
+						</event>
+					</events>
+				</node>
+				<node type="SetBoundingRect" library="Renderer" pos_x="240" pos_y="-16" index="1">
+					<events>
+						<event name="out">
+							<action node="14">start</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="width" source_node="2" source_output="width"/>
+						<input name="height" source_node="3" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="WidthInternal" pos_x="-80" pos_y="104" index="2" library="#script"/>
+				<node type="HeightInternal" pos_x="-80" pos_y="184" index="3" library="#script"/>
+				<node type="For" library="Std" pos_x="3000" pos_y="-216" index="4">
+					<events>
+						<event name="loop">
+							<action node="37">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="from" value="0"/>
+						<input name="count" source_node="10" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="IntMul" library="Std" pos_x="3376" pos_y="16" index="5">
+					<inputs>
+						<input name="a" source_node="39" source_output="value"/>
+						<input name="b" source_node="8" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="3576" pos_y="32" index="6">
+					<inputs>
+						<input name="a" source_node="5" source_output="a * b"/>
+						<input name="b" source_node="7" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" pos_x="3376" pos_y="80" index="7" library="#script"/>
+				<node type="PortHeight" pos_x="3168" pos_y="64" index="8" library="#script"/>
+				<node type="PortWidth" pos_x="3304" pos_y="-168" index="9" library="#script"/>
+				<node type="GetOutputsCount" library="Renderer" pos_x="2824" pos_y="-72" index="10"/>
+				<node type="IntSub" library="Std" pos_x="3512" pos_y="-200" index="11">
+					<inputs>
+						<input name="a" source_node="24" source_output="width"/>
+						<input name="b" source_node="9" source_output="width"/>
+					</inputs>
+				</node>
+				<node type="PortWidth" pos_x="3840" pos_y="160" index="12" library="#script"/>
+				<node type="PortHeight" pos_x="3840" pos_y="200" index="13" library="#script"/>
+				<node type="For" library="Std" pos_x="944" pos_y="-152" index="14">
+					<events>
+						<event name="end">
+							<action node="4">start</action>
+						</event>
+						<event name="loop">
+							<action node="32">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="from" value="0"/>
+						<input name="count" source_node="22" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="SetInputBoundingRect" library="Renderer" pos_x="1800" pos_y="-104" index="15">
+					<events>
+						<event name="out">
+							<action node="31">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="index" source_node="46" source_output="value"/>
+						<input name="x" value="0"/>
+						<input name="y" source_node="35" source_output="value"/>
+						<input name="width" source_node="20" source_output="width"/>
+						<input name="height" source_node="21" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="IntMul" library="Std" pos_x="1200" pos_y="8" index="16">
+					<inputs>
+						<input name="a" source_node="45" source_output="value"/>
+						<input name="b" source_node="19" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="1384" pos_y="56" index="17">
+					<inputs>
+						<input name="a" source_node="16" source_output="a * b"/>
+						<input name="b" source_node="18" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" pos_x="1200" pos_y="72" index="18" library="#script"/>
+				<node type="PortHeight" pos_x="1000" pos_y="88" index="19" library="#script"/>
+				<node type="PortWidth" pos_x="1528" pos_y="120" index="20" library="#script"/>
+				<node type="PortHeight" pos_x="1528" pos_y="160" index="21" library="#script"/>
+				<node type="GetInputsCount" library="Renderer" pos_x="744" pos_y="-72" index="22"/>
+				<node type="SetOutputBoundingRect" library="Renderer" pos_x="4080" pos_y="-104" index="23">
+					<events>
+						<event name="out">
+							<action node="40">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="index" source_node="38" source_output="value"/>
+						<input name="x" source_node="43" source_output="value"/>
+						<input name="y" source_node="51" source_output="value"/>
+						<input name="width" source_node="12" source_output="width"/>
+						<input name="height" source_node="13" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="WidthInternal" pos_x="3304" pos_y="-208" index="24" library="#script"/>
+				<node type="AddHoverArea" library="Renderer" pos_x="-872" pos_y="-720" index="25">
+					<events>
+						<event name="out">
+							<action node="26">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" value="0"/>
+						<input name="width" source_node="27" source_output="width"/>
+						<input name="height" source_node="29" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="AddSelectionArea" library="Renderer" pos_x="-632" pos_y="-720" index="26">
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" value="0"/>
+						<input name="width" source_node="28" source_output="width"/>
+						<input name="height" source_node="30" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="WidthInternal" pos_x="-1104" pos_y="-672" index="27" library="#script"/>
+				<node type="WidthInternal" pos_x="-872" pos_y="-608" index="28" library="#script"/>
+				<node type="HeaderHeight" pos_x="-1104" pos_y="-624" index="29" library="#script"/>
+				<node type="HeaderHeight" pos_x="-872" pos_y="-560" index="30" library="#script"/>
+				<node type="SetInputConnectionPoint" library="Renderer" pos_x="2352" pos_y="-104" index="31">
+					<inputs>
+						<input name="index" source_node="33" source_output="value"/>
+						<input name="x" value="0"/>
+						<input name="y" source_node="47" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="SetVariable" instance="Index" pos_x="1288" pos_y="-120" index="32">
+					<events>
+						<event name="out">
+							<action node="34">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="14" source_output="index"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Index" pos_x="2176" pos_y="-152" index="33"/>
+				<node type="SetVariable" instance="Offset" pos_x="1584" pos_y="-120" index="34">
+					<events>
+						<event name="out">
+							<action node="15">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="17" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Offset" pos_x="1584" pos_y="-48" index="35"/>
+				<node type="GetVariable" instance="Offset" pos_x="1984" pos_y="-32" index="36"/>
+				<node type="SetVariable" instance="Index" pos_x="3448" pos_y="-120" index="37">
+					<events>
+						<event name="out">
+							<action node="42">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="4" source_output="index"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Index" pos_x="3808" pos_y="-280" index="38"/>
+				<node type="GetVariable" instance="Index" pos_x="3168" pos_y="0" index="39"/>
+				<node type="SetOutputConnectionPoint" library="Renderer" pos_x="4800" pos_y="-104" index="40">
+					<inputs>
+						<input name="index" source_node="41" source_output="value"/>
+						<input name="x" source_node="44" source_output="result"/>
+						<input name="y" source_node="53" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Index" pos_x="4320" pos_y="-240" index="41"/>
+				<node type="SetVariable" instance="Offset" pos_x="3688" pos_y="-120" index="42">
+					<events>
+						<event name="out">
+							<action node="50">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="11" source_output="a - b"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Offset" pos_x="3808" pos_y="-208" index="43"/>
+				<node type="Width" library="Renderer" pos_x="4320" pos_y="-72" index="44"/>
+				<node type="GetVariable" instance="Index" pos_x="792" pos_y="-8" index="45"/>
+				<node type="GetVariable" instance="Index" pos_x="1600" pos_y="-208" index="46"/>
+				<node type="IntAdd" library="Std" pos_x="2176" pos_y="-16" index="47">
+					<inputs>
+						<input name="a" source_node="36" source_output="value"/>
+						<input name="b" source_node="49" source_output="a / b"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" pos_x="1800" pos_y="24" index="48" library="#script"/>
+				<node type="IntDiv" library="Std" pos_x="1984" pos_y="24" index="49">
+					<inputs>
+						<input name="a" source_node="48" source_output="height"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="SetVariable" instance="Offset2" pos_x="3872" pos_y="-120" index="50">
+					<events>
+						<event name="out">
+							<action node="23">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="6" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Offset2" pos_x="3824" pos_y="-8" index="51"/>
+				<node type="GetVariable" instance="Offset2" pos_x="4320" pos_y="-24" index="52"/>
+				<node type="IntAdd" library="Std" pos_x="4536" pos_y="-8" index="53">
+					<inputs>
+						<input name="a" source_node="52" source_output="value"/>
+						<input name="b" source_node="55" source_output="a / b"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" pos_x="4080" pos_y="48" index="54" library="#script"/>
+				<node type="IntDiv" library="Std" pos_x="4320" pos_y="48" index="55">
+					<inputs>
+						<input name="a" source_node="54" source_output="height"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="AddHoveringAreaPolygon" library="Renderer" pos_x="-392" pos_y="32" index="56">
+					<events>
+						<event name="out">
+							<action node="1">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="array" source_node="63" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="arrayCreate" library="Std" pos_x="-952" pos_y="-344" index="57">
+					<events>
+						<event name="out">
+							<action node="58">set</action>
+						</event>
+					</events>
+				</node>
+				<node type="SetVariable" instance="Select_Polygon" pos_x="-688" pos_y="-344" index="58">
+					<events>
+						<event name="out">
+							<action node="59">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="57" source_output="new"/>
+					</inputs>
+				</node>
+				<node type="arrayAppend" library="Std" pos_x="-688" pos_y="-224" index="59">
+					<events>
+						<event name="out">
+							<action node="61">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="array" source_node="60" source_output="value"/>
+						<input name="value" source_node="73" source_output="QPoint"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Select_Polygon" pos_x="-952" pos_y="-248" index="60"/>
+				<node type="arrayAppend" library="Std" pos_x="-688" pos_y="-104" index="61">
+					<events>
+						<event name="out">
+							<action node="65">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="array" source_node="62" source_output="value"/>
+						<input name="value" source_node="74" source_output="QPoint"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Select_Polygon" pos_x="-952" pos_y="-128" index="62"/>
+				<node type="GetVariable" instance="Select_Polygon" pos_x="-688" pos_y="240" index="63"/>
+				<node type="WidthInternal" pos_x="-1184" pos_y="-72" index="64" library="#script"/>
+				<node type="arrayAppend" library="Std" pos_x="-688" pos_y="16" index="65">
+					<events>
+						<event name="out">
+							<action node="67">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="array" source_node="66" source_output="value"/>
+						<input name="value" source_node="75" source_output="QPoint"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Select_Polygon" pos_x="-952" pos_y="-8" index="66"/>
+				<node type="arrayAppend" library="Std" pos_x="-688" pos_y="136" index="67">
+					<events>
+						<event name="out">
+							<action node="72">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="array" source_node="68" source_output="value"/>
+						<input name="value" source_node="76" source_output="QPoint"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="Select_Polygon" pos_x="-952" pos_y="120" index="68"/>
+				<node type="WidthInternal" pos_x="-1184" pos_y="48" index="69" library="#script"/>
+				<node type="HeaderHeight" pos_x="-1184" pos_y="88" index="70" library="#script"/>
+				<node type="HeaderHeight" pos_x="-1184" pos_y="184" index="71" library="#script"/>
+				<node type="AddSelectionAreaPolygon" library="Renderer" pos_x="-392" pos_y="-32" index="72">
+					<events>
+						<event name="out">
+							<action node="56">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="array" source_node="63" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="to QPoint" library="Renderer" pos_x="-952" pos_y="-192" index="73">
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" value="0"/>
+					</inputs>
+				</node>
+				<node type="to QPoint" library="Renderer" pos_x="-952" pos_y="-64" index="74">
+					<inputs>
+						<input name="x" source_node="64" source_output="width"/>
+						<input name="y" value="0"/>
+					</inputs>
+				</node>
+				<node type="to QPoint" library="Renderer" pos_x="-952" pos_y="56" index="75">
+					<inputs>
+						<input name="x" source_node="69" source_output="width"/>
+						<input name="y" source_node="70" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="to QPoint" library="Renderer" pos_x="-952" pos_y="176" index="76">
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" source_node="71" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="SetLineType" library="Renderer" pos_x="-1376" pos_y="-184" index="77">
+					<inputs>
+						<input name="LineTypeName" source_node="78" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="StrConst" library="Std" pos_x="-1624" pos_y="-168" index="78">
+					<inputs>
+						<input name="result" value="Bezier"/>
+					</inputs>
+				</node>
+			</nodes>
+			<groups>
+				<group comment="Ñòàğûé (deprecated) Õîâåğèíã / Ñåëåêòèíã" colorR="1.000000" colorG="0.000000" colorB="0.000000">
+					<nodes>
+						<node index="25"/>
+						<node index="26"/>
+						<node index="27"/>
+						<node index="28"/>
+						<node index="29"/>
+						<node index="30"/>
+					</nodes>
+				</group>
+				<group comment="Ãåîìåòğèÿ áëîêà" colorR="1.000000" colorG="0.000000" colorB="0.000000">
+					<nodes>
+						<node index="1"/>
+						<node index="2"/>
+						<node index="3"/>
+					</nodes>
+				</group>
+				<group comment="Selection + Hovering" colorR="1.000000" colorG="0.000000" colorB="0.000000">
+					<nodes>
+						<node index="56"/>
+						<node index="72"/>
+					</nodes>
+				</group>
+				<group comment="Êîîğäèíàòû äëÿ çîí Selection è Hovering" colorR="1.000000" colorG="0.000000" colorB="0.000000">
+					<nodes>
+						<node index="57"/>
+						<node index="58"/>
+						<node index="59"/>
+						<node index="60"/>
+						<node index="61"/>
+						<node index="62"/>
+						<node index="63"/>
+						<node index="64"/>
+						<node index="65"/>
+						<node index="66"/>
+						<node index="67"/>
+						<node index="68"/>
+						<node index="69"/>
+						<node index="70"/>
+						<node index="71"/>
+						<node index="73"/>
+						<node index="74"/>
+						<node index="75"/>
+						<node index="76"/>
+					</nodes>
+				</group>
+			</groups>
+		</logic>
+		<logic name="WidthInternal" kind="">
+			<variables/>
+			<nodes>
+				<node type="Output" instance="width" pos_x="80" pos_y="-160" index="0">
+					<parameters>
+						<parameter name="type">1002</parameter>
+					</parameters>
+					<inputs>
+						<input name="value" value="200"/>
+					</inputs>
+				</node>
+			</nodes>
+		</logic>
+		<logic name="HeightInternal" kind="">
+			<variables>
+				<variable name="height" type_id="1002"/>
+			</variables>
+			<nodes>
+				<node type="Output" instance="height" pos_x="1512" pos_y="160" index="0">
+					<events>
+						<event name="on get">
+							<action node="11">check</action>
+						</event>
+					</events>
+					<parameters>
+						<parameter name="type">1002</parameter>
+					</parameters>
+					<inputs>
+						<input name="value" source_node="14" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" pos_x="320" pos_y="232" index="1" library="#script"/>
+				<node type="IntMul" library="Std" pos_x="320" pos_y="272" index="2">
+					<inputs>
+						<input name="a" source_node="5" source_output="result"/>
+						<input name="b" source_node="4" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="560" pos_y="256" index="3">
+					<inputs>
+						<input name="a" source_node="1" source_output="height"/>
+						<input name="b" source_node="2" source_output="a * b"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" pos_x="80" pos_y="336" index="4" library="#script"/>
+				<node type="GetOutputsCount" library="Renderer" pos_x="80" pos_y="272" index="5"/>
+				<node type="HeaderHeight" pos_x="320" pos_y="-232" index="6" library="#script"/>
+				<node type="IntMul" library="Std" pos_x="320" pos_y="-288" index="7">
+					<inputs>
+						<input name="a" source_node="10" source_output="result"/>
+						<input name="b" source_node="9" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="560" pos_y="-264" index="8">
+					<inputs>
+						<input name="a" source_node="7" source_output="a * b"/>
+						<input name="b" source_node="6" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" pos_x="80" pos_y="-272" index="9" library="#script"/>
+				<node type="GetInputsCount" library="Renderer" pos_x="-120" pos_y="-40" index="10"/>
+				<node type="If" library="Std" pos_x="816" pos_y="-32" index="11">
+					<events>
+						<event name="then">
+							<action node="12">set</action>
+						</event>
+						<event name="else">
+							<action node="13">set</action>
+						</event>
+					</events>
+					<parameters>
+						<parameter name="type">1002</parameter>
+						<parameter name="op">&gt;</parameter>
+					</parameters>
+					<inputs>
+						<input name="a" source_node="8" source_output="a + b"/>
+						<input name="b" source_node="3" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="SetVariable" instance="height" pos_x="1120" pos_y="-80" index="12">
+					<events>
+						<event name="out">
+							<action node="0">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="8" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="SetVariable" instance="height" pos_x="1120" pos_y="24" index="13">
+					<events>
+						<event name="out">
+							<action node="0">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="3" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="height" pos_x="1200" pos_y="160" index="14"/>
+			</nodes>
+		</logic>
+		<logic name="PortWidth" kind="">
+			<variables/>
+			<nodes>
+				<node type="Output" instance="width" pos_x="80" pos_y="-160" index="0">
+					<parameters>
+						<parameter name="type">1002</parameter>
+					</parameters>
+					<inputs>
+						<input name="value" value="75"/>
+					</inputs>
+				</node>
+			</nodes>
+		</logic>
+		<logic name="PortHeight" kind="">
+			<variables/>
+			<nodes>
+				<node type="Output" instance="height" pos_x="80" pos_y="-160" index="0">
+					<parameters>
+						<parameter name="type">1002</parameter>
+					</parameters>
+					<inputs>
+						<input name="value" value="20"/>
+					</inputs>
+				</node>
+			</nodes>
+		</logic>
+		<logic name="HeaderHeight" kind="">
+			<variables/>
+			<nodes>
+				<node type="Output" instance="height" pos_x="80" pos_y="-160" index="0">
+					<parameters>
+						<parameter name="type">1002</parameter>
+					</parameters>
+					<inputs>
+						<input name="value" value="20"/>
+					</inputs>
+				</node>
+			</nodes>
+		</logic>
+	</logics>
+</script>

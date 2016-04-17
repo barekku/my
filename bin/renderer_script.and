@@ -1,0 +1,739 @@
+<script name="renderer_script" version="1" id="{42676302-2d39-48c1-a330-262f47e6a728}">
+	<libraries>
+		<library name="Std" file="GlobexyVPL"/>
+		<library name="Renderer" file="ScriptEditorLibrary"/>
+		<library name="setup_script" file="setup_script.and"/>
+	</libraries>
+	<logics>
+		<logic name="Main" kind="">
+			<variables>
+				<variable name="var_0" type_id="1002"/>
+			</variables>
+			<nodes>
+				<node type="Action" instance="entry" pos_x="-1208" pos_y="-24" index="0">
+					<events>
+						<event name="out">
+							<action node="13">in</action>
+						</event>
+					</events>
+				</node>
+				<node type="FillRect" library="Renderer" pos_x="-296" pos_y="-8" index="1">
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" value="0"/>
+						<input name="width" source_node="2" source_output="result"/>
+						<input name="height" source_node="3" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="Width" library="Renderer" pos_x="-504" pos_y="40" index="2"/>
+				<node type="Height" library="Renderer" pos_x="-504" pos_y="88" index="3"/>
+				<node type="FillRect" library="Renderer" pos_x="656" pos_y="-48" index="4">
+					<inputs>
+						<input name="x" value="1"/>
+						<input name="y" value="1"/>
+						<input name="width" source_node="7" source_output="a - b"/>
+						<input name="height" source_node="8" source_output="a - b"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="-704" pos_y="-8" index="5">
+					<events>
+						<event name="out">
+							<action node="117">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="0"/>
+						<input name="green" value="0"/>
+						<input name="blue" value="0"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="true"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="-80" pos_y="-8" index="6">
+					<events>
+						<event name="out">
+							<action node="118">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="255"/>
+						<input name="green" value="255"/>
+						<input name="blue" value="248"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="true"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="376" pos_y="8" index="7">
+					<inputs>
+						<input name="a" source_node="105" source_output="result"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="376" pos_y="64" index="8">
+					<inputs>
+						<input name="a" source_node="106" source_output="result"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="FillRect" library="Renderer" pos_x="1592" pos_y="-48" index="9">
+					<inputs>
+						<input name="x" value="2"/>
+						<input name="y" value="2"/>
+						<input name="width" source_node="11" source_output="a - b"/>
+						<input name="height" source_node="12" source_output="a - b"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="864" pos_y="-8" index="10">
+					<events>
+						<event name="out">
+							<action node="119">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="192"/>
+						<input name="green" value="192"/>
+						<input name="blue" value="192"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="true"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="1320" pos_y="8" index="11">
+					<inputs>
+						<input name="a" source_node="107" source_output="result"/>
+						<input name="b" value="3"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="1304" pos_y="200" index="12">
+					<inputs>
+						<input name="a" source_node="108" source_output="result"/>
+						<input name="b" value="3"/>
+					</inputs>
+				</node>
+				<node type="SetPenWidth" library="Renderer" pos_x="-968" pos_y="-8" index="13">
+					<events>
+						<event name="out">
+							<action node="5">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="width" value="0.5"/>
+					</inputs>
+				</node>
+				<node type="FillRect" library="Renderer" pos_x="2568" pos_y="-8" index="14">
+					<events>
+						<event name="out">
+							<action node="18">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" value="2"/>
+						<input name="y" value="2"/>
+						<input name="width" source_node="16" source_output="a - b"/>
+						<input name="height" source_node="17" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="2040" pos_y="-136" index="15">
+					<events>
+						<event name="out">
+							<action node="14">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="0"/>
+						<input name="green" value="0"/>
+						<input name="blue" value="127"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="2288" pos_y="8" index="16">
+					<inputs>
+						<input name="a" source_node="109" source_output="result"/>
+						<input name="b" value="3"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" library="setup_script" pos_x="2288" pos_y="72" index="17"/>
+				<node type="SetColor" library="Renderer" pos_x="2784" pos_y="-8" index="18">
+					<events>
+						<event name="out">
+							<action node="21">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="65"/>
+						<input name="green" value="65"/>
+						<input name="blue" value="65"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="3016" pos_y="104" index="19">
+					<inputs>
+						<input name="a" source_node="110" source_output="result"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" library="setup_script" pos_x="3016" pos_y="24" index="20"/>
+				<node type="FillRect" library="Renderer" pos_x="3456" pos_y="-8" index="21">
+					<events>
+						<event name="out">
+							<action node="26">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" value="1"/>
+						<input name="y" source_node="22" source_output="a + b"/>
+						<input name="width" source_node="19" source_output="a - b"/>
+						<input name="height" value="1"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="3200" pos_y="24" index="22">
+					<inputs>
+						<input name="a" source_node="20" source_output="height"/>
+						<input name="b" value="1"/>
+					</inputs>
+				</node>
+				<node type="DrawText" library="Renderer" pos_x="4480" pos_y="-8" index="23">
+					<events>
+						<event name="out">
+							<action node="28">start</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" value="5"/>
+						<input name="y" value="2"/>
+						<input name="width" source_node="111" source_output="result"/>
+						<input name="height" source_node="24" source_output="height"/>
+						<input name="align" value="1"/>
+						<input name="text" source_node="25" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" library="setup_script" pos_x="4192" pos_y="56" index="24"/>
+				<node type="GetName" library="Renderer" pos_x="4176" pos_y="104" index="25"/>
+				<node type="SetColor" library="Renderer" pos_x="3672" pos_y="-8" index="26">
+					<events>
+						<event name="out">
+							<action node="114">check</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="186"/>
+						<input name="green" value="250"/>
+						<input name="blue" value="156"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="SetFont" library="Renderer" pos_x="3992" pos_y="-8" index="27" comment="er34343434">
+					<events>
+						<event name="out">
+							<action node="23">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="family" value="Tahoma"/>
+						<input name="size" value="11"/>
+						<input name="weight" value="0"/>
+						<input name="italic" value="false"/>
+					</inputs>
+				</node>
+				<node type="For" library="Std" pos_x="5064" pos_y="-8" index="28">
+					<events>
+						<event name="end">
+							<action node="46">start</action>
+						</event>
+						<event name="loop">
+							<action node="38">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="from" value="0"/>
+						<input name="count" source_node="29" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="GetInputsCount" library="Renderer" pos_x="4872" pos_y="40" index="29"/>
+				<node type="DrawText" library="Renderer" pos_x="6416" pos_y="8" index="30">
+					<inputs>
+						<input name="x" value="5"/>
+						<input name="y" source_node="36" source_output="a + b"/>
+						<input name="width" source_node="34" source_output="width"/>
+						<input name="height" source_node="33" source_output="height"/>
+						<input name="align" value="0"/>
+						<input name="text" source_node="35" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" library="setup_script" pos_x="5776" pos_y="56" index="31"/>
+				<node type="IntMul" library="Std" pos_x="5976" pos_y="-56" index="32">
+					<inputs>
+						<input name="a" source_node="39" source_output="value"/>
+						<input name="b" source_node="31" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" library="setup_script" pos_x="6032" pos_y="88" index="33"/>
+				<node type="PortWidth" library="setup_script" pos_x="6032" pos_y="48" index="34"/>
+				<node type="GetInputName" library="Renderer" pos_x="6032" pos_y="128" index="35">
+					<inputs>
+						<input name="index" source_node="40" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="6176" pos_y="-80" index="36">
+					<inputs>
+						<input name="a" source_node="37" source_output="height"/>
+						<input name="b" source_node="32" source_output="a * b"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" library="setup_script" pos_x="5976" pos_y="-96" index="37"/>
+				<node type="SetVariable" instance="var_0" pos_x="5296" pos_y="-8" index="38">
+					<events>
+						<event name="out">
+							<action node="41">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="28" source_output="index"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="var_0" pos_x="5776" pos_y="-144" index="39"/>
+				<node type="GetVariable" instance="var_0" pos_x="5776" pos_y="112" index="40"/>
+				<node type="SetColor" library="Renderer" pos_x="5544" pos_y="8" index="41">
+					<events>
+						<event name="out">
+							<action node="30">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" source_node="42" source_output="result"/>
+						<input name="green" source_node="44" source_output="result"/>
+						<input name="blue" source_node="43" source_output="result"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="GetInputColorR" library="Renderer" pos_x="5296" pos_y="64" index="42">
+					<inputs>
+						<input name="index" source_node="45" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="GetInputColorB" library="Renderer" pos_x="5296" pos_y="144" index="43">
+					<inputs>
+						<input name="index" source_node="45" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="GetInputColorG" library="Renderer" pos_x="5296" pos_y="104" index="44">
+					<inputs>
+						<input name="index" source_node="45" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="var_0" pos_x="5064" pos_y="88" index="45"/>
+				<node type="For" library="Std" pos_x="5120" pos_y="-328" index="46">
+					<events>
+						<event name="loop">
+							<action node="48">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="from" value="0"/>
+						<input name="count" source_node="51" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="DrawText" library="Renderer" pos_x="6416" pos_y="-312" index="47">
+					<inputs>
+						<input name="x" source_node="60" source_output="a - b"/>
+						<input name="y" source_node="62" source_output="a + b"/>
+						<input name="width" source_node="58" source_output="width"/>
+						<input name="height" source_node="57" source_output="height"/>
+						<input name="align" value="3"/>
+						<input name="text" source_node="59" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="SetVariable" instance="var_0" pos_x="5352" pos_y="-328" index="48">
+					<events>
+						<event name="out">
+							<action node="49">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="46" source_output="index"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="5608" pos_y="-312" index="49">
+					<events>
+						<event name="out">
+							<action node="47">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" source_node="52" source_output="result"/>
+						<input name="green" source_node="53" source_output="result"/>
+						<input name="blue" source_node="54" source_output="result"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="GetVariable" instance="var_0" pos_x="5120" pos_y="-224" index="50"/>
+				<node type="GetOutputsCount" library="Renderer" pos_x="4872" pos_y="-280" index="51"/>
+				<node type="GetOutputColorR" library="Renderer" pos_x="5352" pos_y="-248" index="52">
+					<inputs>
+						<input name="index" source_node="50" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="GetOutputColorG" library="Renderer" pos_x="5352" pos_y="-208" index="53">
+					<inputs>
+						<input name="index" source_node="50" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="GetOutputColorB" library="Renderer" pos_x="5352" pos_y="-168" index="54">
+					<inputs>
+						<input name="index" source_node="50" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" library="setup_script" pos_x="5712" pos_y="-408" index="55"/>
+				<node type="IntMul" library="Std" pos_x="5904" pos_y="-352" index="56">
+					<inputs>
+						<input name="a" source_node="65" source_output="value"/>
+						<input name="b" source_node="55" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="PortHeight" library="setup_script" pos_x="6168" pos_y="-248" index="57"/>
+				<node type="PortWidth" library="setup_script" pos_x="6104" pos_y="-360" index="58"/>
+				<node type="GetOutputName" library="Renderer" pos_x="6168" pos_y="-216" index="59">
+					<inputs>
+						<input name="index" source_node="64" source_output="value"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="6096" pos_y="-528" index="60">
+					<inputs>
+						<input name="a" source_node="112" source_output="result"/>
+						<input name="b" source_node="66" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="PortWidth" library="setup_script" pos_x="5528" pos_y="-512" index="61"/>
+				<node type="IntAdd" library="Std" pos_x="6104" pos_y="-424" index="62">
+					<inputs>
+						<input name="a" source_node="63" source_output="height"/>
+						<input name="b" source_node="56" source_output="a * b"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" library="setup_script" pos_x="5904" pos_y="-472" index="63"/>
+				<node type="GetVariable" instance="var_0" pos_x="5904" pos_y="-232" index="64"/>
+				<node type="GetVariable" instance="var_0" pos_x="5608" pos_y="-368" index="65"/>
+				<node type="IntAdd" library="Std" pos_x="5712" pos_y="-512" index="66">
+					<inputs>
+						<input name="a" source_node="61" source_output="width"/>
+						<input name="b" value="5"/>
+					</inputs>
+				</node>
+				<node type="For" library="Std" pos_x="5024" pos_y="712" index="67">
+					<events>
+						<event name="loop">
+							<action node="68">set</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="from" value="0"/>
+						<input name="count" source_node="69" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="SetVariable" instance="var_0" pos_x="5256" pos_y="712" index="68">
+					<events>
+						<event name="out">
+							<action node="71">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="value" source_node="67" source_output="index"/>
+					</inputs>
+				</node>
+				<node type="GetOutputsCount" library="Renderer" pos_x="4776" pos_y="760" index="69"/>
+				<node type="FillRect" library="Renderer" pos_x="6384" pos_y="728" index="70">
+					<events>
+						<event name="out">
+							<action node="84">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" source_node="72" source_output="a - b"/>
+						<input name="y" source_node="76" source_output="a + b"/>
+						<input name="width" source_node="80" source_output="width"/>
+						<input name="height" source_node="81" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="5472" pos_y="728" index="71">
+					<events>
+						<event name="out">
+							<action node="70">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="0"/>
+						<input name="green" value="0"/>
+						<input name="blue" value="0"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="6160" pos_y="568" index="72">
+					<inputs>
+						<input name="a" source_node="73" source_output="result"/>
+						<input name="b" source_node="74" source_output="width"/>
+					</inputs>
+				</node>
+				<node type="Width" library="Renderer" pos_x="5960" pos_y="544" index="73"/>
+				<node type="PortWidth" library="setup_script" pos_x="5960" pos_y="608" index="74"/>
+				<node type="IntMul" library="Std" pos_x="5936" pos_y="760" index="75">
+					<inputs>
+						<input name="a" source_node="79" source_output="value"/>
+						<input name="b" source_node="78" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="6136" pos_y="760" index="76">
+					<inputs>
+						<input name="a" source_node="75" source_output="a * b"/>
+						<input name="b" source_node="82" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" library="setup_script" pos_x="5672" pos_y="912" index="77"/>
+				<node type="PortHeight" library="setup_script" pos_x="5672" pos_y="856" index="78"/>
+				<node type="GetVariable" instance="var_0" pos_x="5672" pos_y="672" index="79"/>
+				<node type="PortWidth" library="setup_script" pos_x="6136" pos_y="816" index="80"/>
+				<node type="PortHeight" library="setup_script" pos_x="6136" pos_y="856" index="81"/>
+				<node type="IntAdd" library="Std" pos_x="5888" pos_y="912" index="82">
+					<inputs>
+						<input name="a" source_node="77" source_output="height"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="FillRect" library="Renderer" pos_x="7560" pos_y="728" index="83">
+					<inputs>
+						<input name="x" source_node="98" source_output="a + b"/>
+						<input name="y" source_node="89" source_output="a + b"/>
+						<input name="width" source_node="96" source_output="a - b"/>
+						<input name="height" source_node="97" source_output="a - b"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="6648" pos_y="728" index="84">
+					<events>
+						<event name="out">
+							<action node="83">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="255"/>
+						<input name="green" value="255"/>
+						<input name="blue" value="248"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="7048" pos_y="568" index="85">
+					<inputs>
+						<input name="a" source_node="86" source_output="result"/>
+						<input name="b" source_node="87" source_output="width"/>
+					</inputs>
+				</node>
+				<node type="Width" library="Renderer" pos_x="6848" pos_y="544" index="86"/>
+				<node type="PortWidth" library="setup_script" pos_x="6848" pos_y="608" index="87"/>
+				<node type="IntMul" library="Std" pos_x="7112" pos_y="760" index="88">
+					<inputs>
+						<input name="a" source_node="92" source_output="value"/>
+						<input name="b" source_node="91" source_output="height"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="7312" pos_y="760" index="89">
+					<inputs>
+						<input name="a" source_node="88" source_output="a * b"/>
+						<input name="b" source_node="95" source_output="a + b"/>
+					</inputs>
+				</node>
+				<node type="HeaderHeight" library="setup_script" pos_x="6848" pos_y="912" index="90"/>
+				<node type="PortHeight" library="setup_script" pos_x="6848" pos_y="856" index="91"/>
+				<node type="GetVariable" instance="var_0" pos_x="6848" pos_y="672" index="92"/>
+				<node type="PortWidth" library="setup_script" pos_x="7064" pos_y="976" index="93"/>
+				<node type="PortHeight" library="setup_script" pos_x="7064" pos_y="1016" index="94"/>
+				<node type="IntAdd" library="Std" pos_x="7064" pos_y="912" index="95">
+					<inputs>
+						<input name="a" source_node="90" source_output="height"/>
+						<input name="b" value="3"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="7320" pos_y="896" index="96">
+					<inputs>
+						<input name="a" source_node="93" source_output="width"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="IntSub" library="Std" pos_x="7320" pos_y="960" index="97">
+					<inputs>
+						<input name="a" source_node="94" source_output="height"/>
+						<input name="b" value="2"/>
+					</inputs>
+				</node>
+				<node type="IntAdd" library="Std" pos_x="7272" pos_y="568" index="98">
+					<inputs>
+						<input name="a" source_node="85" source_output="a - b"/>
+						<input name="b" value="1"/>
+					</inputs>
+				</node>
+				<node type="IsHovered" library="Renderer" pos_x="1448" pos_y="-432" index="99"/>
+				<node type="If" library="Std" pos_x="2104" pos_y="-264" index="100">
+					<events>
+						<event name="then">
+							<action node="101">in</action>
+						</event>
+						<event name="else">
+							<action node="15">in</action>
+						</event>
+					</events>
+					<parameters>
+						<parameter name="type">1009</parameter>
+						<parameter name="op">==</parameter>
+					</parameters>
+					<inputs>
+						<input name="a" source_node="99" source_output="result"/>
+						<input name="b" value="true"/>
+					</inputs>
+				</node>
+				<node type="SetColor" library="Renderer" pos_x="2464" pos_y="-280" index="101">
+					<events>
+						<event name="out">
+							<action node="14">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="0"/>
+						<input name="green" value="0"/>
+						<input name="blue" value="200"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="If" library="Std" pos_x="1824" pos_y="-240" index="102">
+					<events>
+						<event name="then">
+							<action node="104">in</action>
+						</event>
+						<event name="else">
+							<action node="100">check</action>
+						</event>
+					</events>
+					<parameters>
+						<parameter name="type">1009</parameter>
+						<parameter name="op">==</parameter>
+					</parameters>
+					<inputs>
+						<input name="a" source_node="103" source_output="result"/>
+						<input name="b" value="true"/>
+					</inputs>
+				</node>
+				<node type="IsSelected" library="Renderer" pos_x="1616" pos_y="-328" index="103"/>
+				<node type="SetColor" library="Renderer" pos_x="2080" pos_y="-432" index="104">
+					<events>
+						<event name="out">
+							<action node="14">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="red" value="0"/>
+						<input name="green" value="0"/>
+						<input name="blue" value="0"/>
+						<input name="alpha" value="255"/>
+						<input name="isSolidPattern" value="false"/>
+					</inputs>
+				</node>
+				<node type="Width" library="Renderer" pos_x="144" pos_y="-72" index="105"/>
+				<node type="Height" library="Renderer" pos_x="136" pos_y="120" index="106"/>
+				<node type="Width" library="Renderer" pos_x="1088" pos_y="-80" index="107"/>
+				<node type="Height" library="Renderer" pos_x="1072" pos_y="120" index="108"/>
+				<node type="Width" library="Renderer" pos_x="2064" pos_y="8" index="109"/>
+				<node type="Width" library="Renderer" pos_x="2776" pos_y="104" index="110"/>
+				<node type="Width" library="Renderer" pos_x="4208" pos_y="-48" index="111"/>
+				<node type="Width" library="Renderer" pos_x="5896" pos_y="-608" index="112"/>
+				<node type="GetZoom" library="Renderer" pos_x="3640" pos_y="-288" index="113"/>
+				<node type="If" library="Std" pos_x="3848" pos_y="-336" index="114">
+					<events>
+						<event name="else">
+							<action node="27">in</action>
+						</event>
+					</events>
+					<parameters>
+						<parameter name="type">1004</parameter>
+						<parameter name="op">&lt;</parameter>
+					</parameters>
+					<inputs>
+						<input name="a" source_node="113" source_output="result"/>
+						<input name="b" value="0.5"/>
+					</inputs>
+				</node>
+				<node type="GetZoom" library="Renderer" pos_x="1352" pos_y="-144" index="115"/>
+				<node type="If" library="Std" pos_x="1560" pos_y="-192" index="116">
+					<events>
+						<event name="else">
+							<action node="102">check</action>
+						</event>
+					</events>
+					<parameters>
+						<parameter name="type">1004</parameter>
+						<parameter name="op">&lt;</parameter>
+					</parameters>
+					<inputs>
+						<input name="a" source_node="115" source_output="result"/>
+						<input name="b" value="0.4"/>
+					</inputs>
+				</node>
+				<node type="DrawEllipse" library="Renderer" pos_x="-296" pos_y="-160" index="117">
+					<events>
+						<event name="out">
+							<action node="6">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" value="0"/>
+						<input name="width" source_node="2" source_output="result"/>
+						<input name="height" source_node="3" source_output="result"/>
+					</inputs>
+				</node>
+				<node type="DrawEllipse" library="Renderer" pos_x="664" pos_y="-176" index="118">
+					<events>
+						<event name="out">
+							<action node="10">in</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" value="0"/>
+						<input name="width" source_node="7" source_output="a - b"/>
+						<input name="height" source_node="8" source_output="a - b"/>
+					</inputs>
+				</node>
+				<node type="DrawEllipse" library="Renderer" pos_x="1616" pos_y="104" index="119">
+					<events>
+						<event name="out">
+							<action node="116">check</action>
+						</event>
+					</events>
+					<inputs>
+						<input name="x" value="0"/>
+						<input name="y" value="0"/>
+						<input name="width" source_node="11" source_output="a - b"/>
+						<input name="height" source_node="12" source_output="a - b"/>
+					</inputs>
+				</node>
+			</nodes>
+			<groups>
+				<group comment="Boost" colorR="1.000000" colorG="0.000000" colorB="0.000000">
+					<nodes>
+						<node index="113"/>
+						<node index="114"/>
+					</nodes>
+				</group>
+				<group comment="Boost" colorR="1.000000" colorG="0.000000" colorB="0.000000">
+					<nodes>
+						<node index="115"/>
+						<node index="116"/>
+					</nodes>
+				</group>
+			</groups>
+		</logic>
+	</logics>
+</script>

@@ -1,0 +1,206 @@
+{
+	"QPushButton":{
+		"methods":[
+			{
+			"name":"setLable", 
+			"inputs":
+				[{"typename":"const char*", "name":"lable", "typeid":1005}],
+			"actions":
+				["onSet"],
+			"events":
+				["out"]
+			}
+		]
+	},
+	"QLineEdit":{
+		"methods":[
+			{
+			"name":"setText", 
+			"inputs":
+				[{"typename":"const char*", "name":"text", "typeid":1005}],
+			"actions":
+				["in"],
+			"events":
+				["out"]
+			},
+			{
+			"name":"getText", 
+			"outputs":
+				[{"typename":"const char*", "name":"text", "typeid":1005}],
+			"actions":
+				["in"],
+			"events":
+				["out"]
+			}
+		]
+	},
+	"TestObject":{
+		"methods":[
+			{
+			"name":"testMethod_0", 
+			"inputs":
+				[{"typename":"const char*", "name":"text", "typeid":1005},
+				 {"typename":"bool", "name":"logic", "typeid":1009}], 
+			"outputs":
+				[{"typename":"void*", "name":"value", "typeid":1012},
+				 {"typename":"double", "name":"number", "typeid":1004}],
+			"actions":
+				["action_0", "action_1"],
+			"events":
+				["event_0", "event_1"]
+			},
+			{
+			"name":"testMethod_1", 
+			"inputs":
+				[{"typename":"void*", "name":"value", "typeid":1012},
+				 {"typename":"double", "name":"number", "typeid":1004}], 
+			"outputs":
+				[{"typename":"const char*", "name":"text", "typeid":1005},
+				 {"typename":"bool", "name":"logic", "typeid":1009}],
+			"actions":
+				["action_10", "action_11"],
+			"events":
+				["event_10", "event_11"]
+			},
+			{
+			"name":"setParam", 
+			"inputs":
+				[{"typename":"void*", "name":"value", "typeid":1012},
+				 {"typename":"const char*", "name":"param", "typeid":1005}],
+			"actions":
+				["in"],
+			"events":
+				["out"]
+			}
+		]
+	},
+	"TestProperty":{
+		"methods":[
+			{
+			"name":"Property:PropertyName_Style_1", 
+			"inputs":
+				[{"typename":"const char*", "name":"set", "typeid":1005}], 
+			"outputs":
+				[{"typename":"const char*", "name":"get", "typeid":1005}],
+			"actions":
+				["set"],
+			"events":
+				["get"]
+			},
+			{
+			"name":"Property:PropertyName_Style_2", 
+			"inputs":
+				[{"typename":"const char*", "name":"set", "typeid":1005}], 
+			"outputs":
+				[{"typename":"const char*", "name":"get", "typeid":1005}],
+			"actions":
+				["set"]
+			}
+		]
+	},
+	"TestIntMethod":{
+		"methods":[
+			{
+			"name":"sendIntData", 
+			"inputs":
+				[{"typename":"int", "name":"num", "typeid":1002}], 
+			"actions":
+				["in"],
+			"events":
+				["out"]
+			}
+		]
+	},
+	"All": {
+		"methods":[
+			{
+			"name":"setParameter", 
+			"inputs":
+				[
+					{"typename":"const char*", "name":"param", "typeid":1005},
+					{"typename":"Variable", "name":"value", "typeid":1007}
+				], 
+			"actions":
+				["set"],
+			"events":
+				["out"]
+			},
+			{
+			"name":"getParameter", 
+			"inputs":
+				[{"typename":"const char*", "name":"param", "typeid":1005}],
+			"outputs": 
+				[{"typename":"Variable", "name":"value", "typeid":1007}],
+			"actions":
+				["get"],
+			"events":
+				["out"]
+			}
+		],
+		"properties":[
+			{
+			"name":"x",
+			"actions": ["onGet"],
+			"events": ["out"],
+			"outputs": [{"typename":"double", "name":"value", "typeid":1004}]
+			},
+			{
+			"name":"y",
+			"actions": ["onGet"],
+			"events": ["out"],
+			"outputs": [{"typename":"double", "name":"value", "typeid":1004}]
+			},
+			{
+			"name":"width",
+			"actions": ["onGet"],
+			"events": ["out"],
+			"outputs": [{"typename":"double", "name":"value", "typeid":1004}]
+			},
+			{
+			"name":"height",
+			"actions": ["onGet"],
+			"events": ["out"],
+			"outputs": [{"typename":"double", "name":"value", "typeid":1004}]
+			},
+			{
+			"name":"name",
+			"actions": ["onGet"],
+			"events": ["out"],
+			"outputs": [{"typename":"const char*", "name":"value", "typeid":1005}]
+			},
+			{
+			"name":"id",
+			"actions": ["onGet"],
+			"events": ["out"],
+			"outputs": [{"typename":"const char*", "name":"value", "typeid":1005}]
+			},
+			{
+			"name":"two_values",
+			"actions": ["onGet"],
+			"events": ["out"],
+			"outputs": [
+				{"typename":"double", "name":"p1", "typeid":1004},
+				{"typename":"const char*", "name":"p2", "typeid":1005}
+				]
+			}
+		],
+		"events":[
+			{
+			"name":"onclick",
+			"events": ["triggered"]
+			},
+			{
+			"name":"ondblclick",
+			"events": ["triggered"]
+			},
+			{
+			"name":"xy_event",
+			"events": ["triggered"],
+			"outputs": [
+				{"typename":"double", "name":"x", "typeid":1004},
+				{"typename":"double", "name":"y", "typeid":1004}
+				]
+			}
+		]
+	}
+}

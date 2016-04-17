@@ -1,0 +1,14 @@
+{
+    "objects": {
+        "QPushButton": [
+            {
+                "id": "QPushButton_0",
+                "name": "Button"
+            },
+            {
+                "id": "QPushButton_1",
+                "name": "Button"
+            }
+        ]
+    }
+}
